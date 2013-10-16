@@ -21,7 +21,7 @@ Inputs::~Inputs()//Destructor
 
 void Inputs::update() //All these functions get the value of joystick values
 {
-	shooting = joystick->GetRawButton(1); //trigger button
+	//shooting = joystick->GetRawButton(1); //trigger button
 	
 	joystickX = joystick->GetX();
 	joystickY = joystick->GetY();

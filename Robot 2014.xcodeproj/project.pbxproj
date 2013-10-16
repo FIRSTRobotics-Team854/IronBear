@@ -19,11 +19,11 @@
 		11C994B1180F2299001E3952 = {
 			isa = PBXGroup;
 			children = (
-				11C994C2180F22BB001E3952 /* DriveProcessing.hpp */,
 				11C994C3180F22BB001E3952 /* FIRSTRobot.hpp */,
-				11C994C4180F22BB001E3952 /* Inputs.hpp */,
-				11C994C5180F22BB001E3952 /* DriveProcessing.cpp */,
 				11C994C6180F22BB001E3952 /* FIRSTRobot.cpp */,
+				11C994C2180F22BB001E3952 /* DriveProcessing.hpp */,
+				11C994C5180F22BB001E3952 /* DriveProcessing.cpp */,
+				11C994C4180F22BB001E3952 /* Inputs.hpp */,
 				11C994C7180F22BB001E3952 /* Inputs.cpp */,
 			);
 			sourceTree = "<group>";
