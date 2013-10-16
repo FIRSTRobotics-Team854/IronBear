@@ -65,8 +65,9 @@ void Robot2013::RobotInit() {
 	PID_bl->SetOutputRange(-1.0f, 1.0f);
 	PID_br->SetOutputRange(-1.0f, 1.0f);
 	
-	/*//new Drive objects
-	drive = new Drive(mtl, mtr, mbl, mbr)*/
+	//new DriveProcessing objects
+	DriveProcessing = new DriveProcessing(mfl, mfr, mbl, mbr)
+	
 }
 	
 void Robot2013::AutonomousInit() {

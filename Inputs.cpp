@@ -1,7 +1,5 @@
 #include "Inputs.hpp"
 
-#include <iostream>
-
 Inputs::Inputs() //Constructor
 {
 	joystick = new Joystick(1);
@@ -23,7 +21,7 @@ void Inputs::update() //All these functions get the value of joystick values
 {
 	//shooting = joystick->GetRawButton(1); //trigger button
 	
-	joystickX = joystick->GetX();
+	joystickX = -1 * (joystick->GetX());
 	joystickY = joystick->GetY();
 	joystickZ = joystick->GetZ();
 	
