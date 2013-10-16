@@ -1,7 +1,6 @@
 #include "Inputs.hpp"
 
-Inputs::Inputs() //Constructor
-{
+Inputs::Inputs() { //Constructor
 	joystick = new Joystick(1);
 	
 	joystickX = 0;
@@ -12,8 +11,7 @@ Inputs::Inputs() //Constructor
 	DEADZONE = 0.05;
 	Inputs::update();
 }
-Inputs::~Inputs()//Destructor
-{
+Inputs::~Inputs() { //Destructor
 	
 }
 
@@ -58,10 +56,10 @@ double Inputs::getJoystickZ() {
 	return joystickZ;
 }
 
-double Inputs::getjoystickMagnitude() {
+double Inputs::getJoystickMagnitude() {
 	return joystickMagnitude;
 }
 
-double Inputs::getjoystickDirection() {
+double Inputs::getJoystickDirection() {
 	return joystickDirection;
 }

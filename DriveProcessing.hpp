@@ -16,16 +16,13 @@ class DriveProcessing
 {
 private:
 	
-	double motor[4];            //temp motor intensity (domain: 0 - 1)
-	double motorMax
-	double motorprevious[4];
-	double motorAngle[4]; 		//motor angles (rad)
-	double scaleFactor;         //factor by which relative motor values are scaled
+	
+	double motorAngle;
+	double motor;//motor intensity (domain: 0 - 1)	//motor angles (rad)
 	
 public: //delcare public methods found in this class
 	DriveProcessing(Victor *mfl, Victor *mfr, Victor *mbl, Victor *mbr);
 	~DriveProcessing();
 	
 	void update(double joystickDirection, double joystickMagnitude);
-	void DriveProcessing::PID_stuff(PIDController* PIDtl, PIDController* PIDtr, PIDController* PIDbl, PIDController* PIDbr);
 };

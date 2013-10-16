@@ -20,4 +20,10 @@ private: //All these bools stored the state of the various Joystick buttons (1/0
 public: //declare methods in this class to be made public
 	Inputs();
 	~Inputs();
+	
+	double getJoystickX;
+	double getJoystickY;
+	double getJoystickZ;
+	double getJoystickMagnitude;
+	double getJoystickDirection;
 };
