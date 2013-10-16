@@ -5,6 +5,14 @@
 Inputs::Inputs() //Constructor
 {
 	joystick = new Joystick(1);
+	
+	joystickX = 0;
+	joystickY = 0;
+	joystickZ = 0;
+	joystickMagnitude = 0;
+	joystickDirection = 0;
+	DEADZONE = 0.05;
+	Inputs::update();
 }
 Inputs::~Inputs()//Destructor
 {
@@ -18,9 +26,6 @@ void Inputs::update() //All these functions get the value of joystick values
 	joystickX = joystick->GetX();
 	joystickY = joystick->GetY();
 	joystickZ = joystick->GetZ();
-	
-	joystickMagnitude = 0;
-	joystickDirection = 0;
 	
 	if((fabs(joystickX) > DEADZONE) || (fabs(joystickY) > DEADZONE)) {
 		//dead zone ensures twichy joystick values don't give the robot seizures
@@ -55,10 +60,10 @@ double Inputs::getJoystickZ() {
 	return joystickZ;
 }
 
-double Inputs::joystickMagnitude() {
+double Inputs::getjoystickMagnitude() {
 	return joystickMagnitude;
 }
 
-double Inputs::joystickDirection() {
+double Inputs::getjoystickDirection() {
 	return joystickDirection;
 }

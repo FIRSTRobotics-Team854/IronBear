@@ -7,7 +7,7 @@ private: //All these bools stored the state of the various Joystick buttons (1/0
 	float joystickZ; //rotate axis of joystick
 	double joystickMagnitude;   //joystick input magnitude (domain: 0 - 1)
 	double joystickDirection;   //joystick input direction in RAD (domain: 0 - 2pi)
-	const float DEADZONE = 0.05; //dead zone set to 5% deflection
+	const float DEADZONE; //dead zone set to 5% deflection
 	/*
 (-1,-1) -X- (1,-1)
   |            |
