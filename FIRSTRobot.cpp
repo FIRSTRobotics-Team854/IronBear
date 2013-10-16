@@ -6,10 +6,10 @@ void FIRSTRobot::RobotInit() {
 	//Instantiate new Encoder objects (aChannel, bChannel, multiplier)
 	//"CounterBase::k1X" = 360 "ticks" per revolution
 	//Channels defined in FIRSTRobot.hpp
-	flEncoder = new Encoder(FRONT_LEFT_MOTOR_A,FRONT_LEFT_MOTOR_B, CounterBase::k1X); //TL motor II
-	frEncoder = new Encoder(FRONT_RIGHT_MOTOR_A,FRONT_RIGHT_MOTOR_B, CounterBase::k1X); //TR motor III
-	blEncoder = new Encoder(BACK_LEFT_MOTOR_A,BACK_LEFT_MOTOR_B, CounterBase::k1X); //BL motor I
-	brEncoder = new Encoder(BACK_RIGHT_TMOTOR_A,BACK_RIGHT_TMOTOR_B, CounterBase::k1X); //BR motor IIII
+	flEncoder = new Encoder(FRONT_LEFT_ENCODER_A,FRONT_LEFT_ENCODER_B, CounterBase::k1X); //TL motor II
+	frEncoder = new Encoder(FRONT_RIGHT_ENCODER_A,FRONT_RIGHT_ENCODER_B, CounterBase::k1X); //TR motor III
+	blEncoder = new Encoder(BACK_LEFT_ENCODER_A,BACK_LEFT_ENCODER_B, CounterBase::k1X); //BL motor I
+	brEncoder = new Encoder(BACK_RIGHT_TENCODER_A,BACK_RIGHT_TENCODER_B, CounterBase::k1X); //BR motor IIII
 	//magic?
 	flEncoder->SetPIDSourceParameter(Encoder::kRate);
 	frEncoder->SetPIDSourceParameter(Encoder::kRate);
