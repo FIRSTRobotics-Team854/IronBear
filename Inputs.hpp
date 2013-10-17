@@ -1,4 +1,4 @@
-//Martingrove FIRST Robotics  Team 854
+//Martingrove FIRST Robotics Team 854
 class Inputs {
 	
 private: //All these bools stored the state of the various Joystick buttons (1/0)

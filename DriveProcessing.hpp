@@ -1,4 +1,4 @@
-//Martingrove FIRST Robotics  Team 854
+//Martingrove FIRST Robotics Team 854
 /*
  motor[1]----motor[2]
    |    Front   |
