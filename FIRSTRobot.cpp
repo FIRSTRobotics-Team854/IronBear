@@ -59,6 +59,7 @@ void FIRSTRobot::RobotInit() {
 	
 	//Instantiate new a Input object
 	input = new Input();
+	input->update();
 	
 	//Instantiate new HolonomicDrive objects
 	flHolonomicDrive = new HolonomicDrive(3*PI/4);

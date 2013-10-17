@@ -24,27 +24,15 @@ void HolonomicDrive::update(double joystickDirection, double joystickMagnitude ,
 	
 	//Rotation
     if (joystickZ >= 0.25) { //deadzone
-        for (i=0;i<4;i++) {
             motor *= 0.8; //scaled down motors (100% motors can't go any faster)
             motor += 0.2; //+ to all motors makes robot rotate one way
-        }
-    }
+	}
     if (joystickZ <= -0.25) { //deadzone
-        for (i=0;i<4;i++) {
             motor *= 0.8; //scaled down motors (100% motors can't go any faster)
             motor -= 0.2; //- to all motors makes robot rotate the other way
-        }
     }
     
-	
-	/*cerr<<"M0: "<<motor[0]<<endl;
-	cerr<<"M1: "<<motor[1]<<endl;
-	cerr<<"M2: "<<motor[2]<<endl;
-	cerr<<"M3: "<<motor[3]<<endl;
-	cerr<<"X-Value: "<<joystickX<<endl;
-	cerr<<"Y-Value: "<<joystickY<<endl;
-    cerr<<"Z-Value: "<<joystickZ<<endl;
-    cerr<<"Magnitude: "<<joystickMagnitude<<endl;*/
+	//cerr<<"M: "<<motor<<endl;
 }
 
 double getMotor () {
