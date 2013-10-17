@@ -10,17 +10,19 @@
 #define PI 3.14159
 
 
-class DriveProcessing
+class HolonomicDrive
 {
 private:
-	
-	
+
+	static double motorAngle[4] = {3*PI/4,PI/4,-PI/4,-3*PI/4};
+	static double scaleFactor;
 	double motorAngle;
 	double motor;//motor intensity (domain: 0 - 1)	//motor angles (rad)
 	
 public: //delcare public methods found in this class
-	DriveProcessing(Victor *mfl, Victor *mfr, Victor *mbl, Victor *mbr);
-	~DriveProcessing();
+	HolonomicDrive(Victor *mfl, Victor *mfr, Victor *mbl, Victor *mbr);
+	~HolonomicDrive();
 	
-	void update(double joystickDirection, double joystickMagnitude);
+	void update(double joystickDirection, double joystickMagnitude ,double joystickZ);
+	static void scale(double joystickDirection);
 };

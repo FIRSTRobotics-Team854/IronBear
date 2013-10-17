@@ -1,5 +1,5 @@
 //Martingrove FIRST Robotics Team 854
-class Inputs {
+class Input {
 	
 private: //All these bools stored the state of the various Joystick buttons (1/0)
 	Joystick *joystick;
@@ -19,8 +19,8 @@ private: //All these bools stored the state of the various Joystick buttons (1/0
 **********************************************************************************/
 	
 public: //declare methods in this class to be made public
-	Inputs();
-	~Inputs();
+	Input();
+	~Input();
 	
 	double getJoystickX;
 	double getJoystickY;

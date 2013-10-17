@@ -6,10 +6,10 @@ void FIRSTRobot::RobotInit() {
 	//Instantiate new Encoder objects (aChannel, bChannel, multiplier)
 	//"CounterBase::k1X" = 360 "ticks" per revolution
 	//Channels defined in FIRSTRobot.hpp
-	flEncoder = new Encoder(FRONT_LEFT_ENCODER_A,FRONT_LEFT_ENCODER_B, CounterBase::k1X); //TL motor II
-	frEncoder = new Encoder(FRONT_RIGHT_ENCODER_A,FRONT_RIGHT_ENCODER_B, CounterBase::k1X); //TR motor III
-	blEncoder = new Encoder(BACK_LEFT_ENCODER_A,BACK_LEFT_ENCODER_B, CounterBase::k1X); //BL motor I
-	brEncoder = new Encoder(BACK_RIGHT_TENCODER_A,BACK_RIGHT_TENCODER_B, CounterBase::k1X); //BR motor IIII
+	flEncoder = new Encoder(FRONT_LEFT_ENCODER_A, FRONT_LEFT_ENCODER_B, CounterBase::k1X); //TL motor II
+	frEncoder = new Encoder(FRONT_RIGHT_ENCODER_A, FRONT_RIGHT_ENCODER_B, CounterBase::k1X); //TR motor III
+	blEncoder = new Encoder(BACK_LEFT_ENCODER_A, BACK_LEFT_ENCODER_B, CounterBase::k1X); //BL motor I
+	brEncoder = new Encoder(BACK_RIGHT_TENCODER_A, BACK_RIGHT_TENCODER_B, CounterBase::k1X); //BR motor IIII
 	//magic?
 	flEncoder->SetPIDSourceParameter(Encoder::kRate);
 	frEncoder->SetPIDSourceParameter(Encoder::kRate);
@@ -47,21 +47,31 @@ void FIRSTRobot::RobotInit() {
 	blPIDController->Enable();
 	brPIDController->Enable();
 	
-	flPIDController->SetInputRange(-300.0, 300.0);
+	flPIDController->SetInputRange(-300.0f, 300.0f); //TEST WITH AND WITHOUT f
 	frPIDController->SetInputRange(-300.0f, 300.0f);
-	blPIDController->SetInputRange(-300.0, 300.0);
-	brPIDController->SetInputRange(-300.0, 300.0);
+	blPIDController->SetInputRange(-300.0f, 300.0f);
+	brPIDController->SetInputRange(-300.0f, 300.0f);
 	
 	flPIDController->SetOutputRange(-1.0f, 1.0f);
 	frPIDController->SetOutputRange(-1.0f, 1.0f);
 	blPIDController->SetOutputRange(-1.0f, 1.0f);
 	brPIDController->SetOutputRange(-1.0f, 1.0f);
 	
-	//Instantiate new DriveProcessing objects
-	flDriveProcessing = new DriveProcessing(3*PI/4);
-	frDriveProcessing = new DriveProcessing(PI/4);
-	blDriveProcessing = new DriveProcessing(-PI/4);
-	brDriveProcessing = new DriveProcessing(-3*PI/4);
+	//Instantiate new a Input object
+	input = new Input();
+	
+	//Instantiate new HolonomicDrive objects
+	flHolonomicDrive = new HolonomicDrive(3*PI/4);
+	frHolonomicDrive = new HolonomicDrive(PI/4);
+	blHolonomicDrive = new HolonomicDrive(-PI/4);
+	brHolonomicDrive = new HolonomicDrive(-3*PI/4);
+	
+	HolonomicDrive::scale(input.getJoystickDirection);
+
+	flHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
+	frHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
+	blHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
+	brHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
 	
 	//Instantiate new Victor objects (PWM Module, PWM Channel)
 	//Channels defined in FIRSTRobot.hpp

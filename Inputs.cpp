@@ -1,7 +1,7 @@
 //Martingrove FIRST Robotics Team 854
-#include "Inputs.hpp"
+#include "Input.hpp"
 
-Inputs::Inputs() { //Constructor
+Input::Input() { //Constructor
 	joystick = new Joystick(1);
 	
 	joystickX = 0;
@@ -10,13 +10,13 @@ Inputs::Inputs() { //Constructor
 	joystickMagnitude = 0;
 	joystickDirection = 0;
 	DEADZONE = 0.05;
-	Inputs::update();
+	Input::update();
 }
-Inputs::~Inputs() { //Destructor
+Input::~Input() { //Destructor
 	
 }
 
-void Inputs::update() //All these functions get the value of joystick values
+void Input::update() //All these functions get the value of joystick values
 {
 	//shooting = joystick->GetRawButton(1); //trigger button
 	
@@ -45,22 +45,22 @@ void Inputs::update() //All these functions get the value of joystick values
 
 //Accessor functions get the value of joystick values
 
-double Inputs::getJoystickX() {
+double Input::getJoystickX() {
 	return joystickX;
 }
 
-double Inputs::getJoystickY() {
+double Input::getJoystickY() {
 	return joystickY;
 }
 
-double Inputs::getJoystickZ() {
+double Input::getJoystickZ() {
 	return joystickZ;
 }
 
-double Inputs::getJoystickMagnitude() {
+double Input::getJoystickMagnitude() {
 	return joystickMagnitude;
 }
 
-double Inputs::getJoystickDirection() {
+double Input::getJoystickDirection() {
 	return joystickDirection;
 }

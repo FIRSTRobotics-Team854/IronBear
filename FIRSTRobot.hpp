@@ -5,8 +5,8 @@
 #include "WPILib.h"
 #include "Victor.h"
 
-#include "Inputs.cpp"
-#include "DriveProcessing.cpp"
+#include "Input.cpp"
+#include "HolonomicDrive.cpp"
 
 class FIRSTRobot : public IterativeRobot {
 private:
@@ -38,10 +38,10 @@ private:
 	Encoder *flEncoder, *frEncoder, *blEncoder, *brEncoder;
 	//Declare PIDController objects
 	PIDController *flPIDController, *frPIDController, *blPIDController, *brPIDController;
-	//Declare DriveProcessing objects
-	DriveProcessing *flDriveProcessing, *frDriveProcessing, *blDriveProcessing, *brDriveProcessing;
-	//Declare input objects
-	//Inputs *inputs;
+	//Declare HolonomicDrive objects
+	HolonomicDrive *flHolonomicDrive, *frHolonomicDrive, *blHolonomicDrive, *brHolonomicDrive;
+	//Declare Input object
+	Input *input;
 	
 	virtual void RobotInit(); //Declare the functions of the FIRSTRobot Class
 	
