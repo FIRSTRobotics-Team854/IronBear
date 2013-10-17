@@ -105,7 +105,7 @@ void FIRSTRobot::TeleopPeriodic() {
 		brPIDController->SetSetpoint(drive->getbrMotor*220.0f)
 	}
 	
-	
+	//Debuging magic and stuff.
 	SmartDashboard::PutData("fl", flPIDController);
 	SmartDashboard::PutData("fr", frPIDController);
 	SmartDashboard::PutData("bl", blPIDController);
@@ -119,6 +119,7 @@ void FIRSTRobot::TeleopPeriodic() {
 	SmartDashboard::PutNumber("ebl", blEncoder->GetRate());
 	SmartDashboard::PutNumber("ebr", brEncoder->GetRate());
 	
+	/*
 	cerr<<"joystickX: "<<input->getJoystickX()<<endl;
 	cerr<<"joystickY: "<<input->getJoystickY()<<endl;
 	cerr<<"joystickZ: "<<input->getJoystickZ()<<endl;
@@ -131,7 +132,7 @@ void FIRSTRobot::TeleopPeriodic() {
 	cerr<<"flEncoder: "<<flEncoder->GetRate()<<endl;
 	cerr<<"frEncoder: "<<frEncoder->GetRate()<<endl;
 	cerr<<"blEncoder: "<<blEncoder->GetRate()<<endl;
-	cerr<<"brEncoder: "<<brEncoder->GetRate()<<endl;
+	cerr<<"brEncoder: "<<brEncoder->GetRate()<<endl;*/
 }
  
 void FIRSTRobot::TestPeriodic() {
