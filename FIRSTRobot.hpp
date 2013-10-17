@@ -38,8 +38,8 @@ private: //delcare private variables and methods found in this class
 	Encoder *flEncoder, *frEncoder, *blEncoder, *brEncoder;
 	//Declare PIDController objects
 	PIDController *flPIDController, *frPIDController, *blPIDController, *brPIDController;
-	//Declare HolonomicDrive objects
-	HolonomicDrive *flHolonomicDrive, *frHolonomicDrive, *blHolonomicDrive, *brHolonomicDrive;
+	//Declare HolonomicDrive object
+	HolonomicDrive **holonomicDrive;
 	//Declare Input object
 	Input *input;
 	

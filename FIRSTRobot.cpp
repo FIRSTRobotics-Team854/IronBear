@@ -36,11 +36,19 @@ void FIRSTRobot::RobotInit() {
 	blEncoder->SetMinRate(0);
 	brEncoder->SetMinRate(0);
 	
+	
+	//Instantiate new Victor objects (PWM Module, PWM Channel)
+	//Channels defined in FIRSTRobot.hpp
+	flVictor = new Victor(1, FRONT_LEFT_MOTOR);
+	frVictor = new Victor(1, FRONT_RIGHT_MOTOR);
+	blVictor = new Victor(1, BACK_LEFT_MOTOR);
+	brVictor = new Victor(1, BACK_RIGHT_MOTOR);
+	
 	//Instantiate PIDController objects (Kp, Ki, Kd, encoder object, Set Point - motor object)
-	flPIDController = new PIDController(0.008, 0.00001, 0.0, etl, mtl);
-	frPIDController = new PIDController(0.008, 0.00001, 0.0, etr, mtr);
-	blPIDController = new PIDController(0.008, 0.00001, 0.0, ebl, mbl);
-	brPIDController = new PIDController(0.008, 0.00001, 0.0, ebr, mbr);
+	flPIDController = new PIDController(0.008, 0.00001, 0.0, flEncoder, flVictor);
+	frPIDController = new PIDController(0.008, 0.00001, 0.0, frEncoder, frVictor);
+	blPIDController = new PIDController(0.008, 0.00001, 0.0, blEncoder, blVictor);
+	brPIDController = new PIDController(0.008, 0.00001, 0.0, brEncoder, brVictor);
 	
 	flPIDController->Enable();
 	frPIDController->Enable();
@@ -60,18 +68,8 @@ void FIRSTRobot::RobotInit() {
 	//Instantiate new a Input object
 	input = new Input();
 	
-	//Instantiate new HolonomicDrive objects
-	flHolonomicDrive = new HolonomicDrive(3*PI/4);
-	frHolonomicDrive = new HolonomicDrive(PI/4);
-	blHolonomicDrive = new HolonomicDrive(-PI/4);
-	brHolonomicDrive = new HolonomicDrive(-3*PI/4);
-	
-	//Instantiate new Victor objects (PWM Module, PWM Channel)
-	//Channels defined in FIRSTRobot.hpp
-	flVictor = new Victor(1, FRONT_LEFT_MOTOR);
-	frVictor = new Victor(1, FRONT_RIGHT_MOTOR);
-	blVictor = new Victor(1, BACK_LEFT_MOTOR);
-	brVictor = new Victor(1, BACK_RIGHT_MOTOR);
+	//Instantiate new a HolonomicDrive/InLineDrive object
+	drive = new HolonomicDrive();
 }
 	
 void FIRSTRobot::AutonomousInit() {
@@ -81,37 +79,59 @@ void FIRSTRobot::AutonomousPeriodic() {
 }
 
 void FIRSTRobot::TeleopInit() {
+	SmartDashboard::init();
 }
 
 void FIRSTRobot::TeleopPeriodic() {
 	
+	//update input data
 	input->update();
-	
-	HolonomicDrive::scale(input.getJoystickDirection);
-	
-	flHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
-	frHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
-	blHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
-	brHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
-	
+	//performe drive processing using fresh input data
+	drive->update(input->getJoystickDirection, input->getJoystickMagnitude, input->getJoystickZ);
 	//update set point of PID if the change in speed is great enough
-	
 	if(fabs(flPIDController->GetSetpoint() - flHolonomicDrive.getMotor()*220) > 22) {
-		flPIDController->SetSetpoint(motor[1]*220.0f)
+		flPIDController->SetSetpoint(drive->getflMotor*220.0f)
 	}
 	
 	if(fabs(frPIDController->GetSetpoint() - frHolonomicDrive.getMotor()*220) > 22){
-		frPIDController->SetSetpoint(motor[1]*220.0f)
+		frPIDController->SetSetpoint(drive->getfrMotor*220.0f)
 	}
 	
 	if(fabs(blPIDController->GetSetpoint() - blHolonomicDrive.getMotor()*220) > 22){
-		blPIDController->SetSetpoint(motor[1]*220.0f)
+		blPIDController->SetSetpoint(drive->getblMotor*220.0f)
 	}
 	
 	if(fabs(brPIDController->GetSetpoint() - brHolonomicDrive.getMotor()*220) > 22){
-		brPIDController->SetSetpoint(motor[1]*220.0f)
+		brPIDController->SetSetpoint(drive->getbrMotor*220.0f)
 	}
-
+	
+	
+	SmartDashboard::PutData("fl", flPIDController);
+	SmartDashboard::PutData("fr", frPIDController);
+	SmartDashboard::PutData("bl", blPIDController);
+	SmartDashboard::PutData("br", brPIDController);
+	SmartDashboard::PutData("efl", flEncoder);
+	SmartDashboard::PutData("efr", frEncoder);
+	SmartDashboard::PutData("ebl", blEncoder);
+	SmartDashboard::PutData("ebr", brEncoder);
+	SmartDashboard::PutNumber("efl", flEncoder->GetRate());
+	SmartDashboard::PutNumber("efr", frEncoder->GetRate());
+	SmartDashboard::PutNumber("ebl", blEncoder->GetRate());
+	SmartDashboard::PutNumber("ebr", brEncoder->GetRate());
+	
+	cerr<<"joystickX: "<<input->getJoystickX()<<endl;
+	cerr<<"joystickY: "<<input->getJoystickY()<<endl;
+	cerr<<"joystickZ: "<<input->getJoystickZ()<<endl;
+	cerr<<"joystickMagnitude: "<<input->getJoystickMagnitude()<<endl
+	cerr<<"joystickDirection: "<<input->getJoystickDirection()<<endl
+	cerr<<"mflMotor: "<<drive->getflMotor()<<endl;
+	cerr<<"mfrMotor: "<<drive->getfrMotor()<<endl;
+	cerr<<"mblMotor: "<<drive->getblMotor()<<endl;
+	cerr<<"mbrMotor: "<<drive->getbrMotor()<<endl;
+	cerr<<"flEncoder: "<<flEncoder->GetRate()<<endl;
+	cerr<<"frEncoder: "<<frEncoder->GetRate()<<endl;
+	cerr<<"blEncoder: "<<blEncoder->GetRate()<<endl;
+	cerr<<"brEncoder: "<<brEncoder->GetRate()<<endl;
 }
  
 void FIRSTRobot::TestPeriodic() {

@@ -13,15 +13,26 @@
 class HolonomicDrive {
 private: //delcare private variables and methods found in this class
 
-	static double motorAngle[4] = {3*PI/4,PI/4,-PI/4,-3*PI/4};
-	static double scaleFactor;
-	double motorAngle;
-	double motor;//motor intensity (domain: 0 - 1)	//motor angles (rad)
+	
+	double scaleFactor;
+	//motor angles (rad)
+	const double flAngle = PI/4;
+	const double frAngle = -PI/4;
+	const double blAngle = -3*PI/4;
+	const double brAngle = 3*PI/4;
+	//motor intensity (domain: 0 - 1)
+	double flMotor;
+	double frMotor;
+	double blMotor;
+	double brMotor;
 	
 public: //delcare public variables and methods found in this class
 	HolonomicDrive(Victor *mfl, Victor *mfr, Victor *mbl, Victor *mbr);
 	~HolonomicDrive();
 	
 	void update(double joystickDirection, double joystickMagnitude ,double joystickZ);
-	static void scale(double joystickDirection);
+	double getflMotor();
+	double getfrMotor();
+	double getblMotor();
+	double getbrMotor();
 };
