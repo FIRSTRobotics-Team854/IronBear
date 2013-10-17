@@ -9,7 +9,7 @@
 #include "HolonomicDrive.cpp"
 
 class FIRSTRobot : public IterativeRobot {
-private:
+private: //delcare private variables and methods found in this class
 	//Output Ports:
 	const int FRONT_LEFT_MOTOR = 1;
 	const int FRONT_RIGHT_MOTOR = 2;
@@ -54,4 +54,7 @@ private:
 	virtual void TeleopPeriodic();
 	
 	virtual void TestPeriodic();
+	
+public: //delcare public variables and methods found in this class
+	
 };

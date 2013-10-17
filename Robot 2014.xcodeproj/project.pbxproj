@@ -15,7 +15,7 @@
 		11C994C7180F22BB001E3952 /* Inputs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Inputs.cpp; sourceTree = "<group>"; };
 		11EF6DC5180F84E100D4A110 /* File.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
 		11EF6DC7180F8F9A00D4A110 /* Output.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Output.cpp; sourceTree = "<group>"; };
-		11EF6DC8180F8F9A00D4A110 /* Output.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Output.h; sourceTree = "<group>"; };
+		11EF6DC8180F8F9A00D4A110 /* Output.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Output.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -28,7 +28,7 @@
 				11C994C7180F22BB001E3952 /* Inputs.cpp */,
 				11C994C2180F22BB001E3952 /* HolonomicDrive.hpp */,
 				11C994C5180F22BB001E3952 /* HolonomicDrive.cpp */,
-				11EF6DC8180F8F9A00D4A110 /* Output.h */,
+				11EF6DC8180F8F9A00D4A110 /* Output.hpp */,
 				11EF6DC7180F8F9A00D4A110 /* Output.cpp */,
 				11EF6DC5180F84E100D4A110 /* File.cpp */,
 			);

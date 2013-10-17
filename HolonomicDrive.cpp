@@ -1,5 +1,3 @@
-/* Robotics 2013
-Copyright (c) 2013 MCIRobotics854. All rights reserved.
 //Martingrove FIRST Robotics Team 854
 /*
 motor[1]----motor[2]

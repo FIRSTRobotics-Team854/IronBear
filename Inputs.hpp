@@ -1,7 +1,7 @@
 //Martingrove FIRST Robotics Team 854
 class Input {
 	
-private: //All these bools stored the state of the various Joystick buttons (1/0)
+private: //delcare private variables and methods found in this class
 	Joystick *joystick;
 	float joystickX; //x coord of joystick
 	float joystickY; //y coord of joystick
@@ -18,7 +18,7 @@ private: //All these bools stored the state of the various Joystick buttons (1/0
 (-1,1)  -X-  (1,1)
 **********************************************************************************/
 	
-public: //declare methods in this class to be made public
+public: //delcare public variables and methods found in this class
 	Input();
 	~Input();
 	
