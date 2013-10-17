@@ -59,20 +59,12 @@ void FIRSTRobot::RobotInit() {
 	
 	//Instantiate new a Input object
 	input = new Input();
-	input->update();
 	
 	//Instantiate new HolonomicDrive objects
 	flHolonomicDrive = new HolonomicDrive(3*PI/4);
 	frHolonomicDrive = new HolonomicDrive(PI/4);
 	blHolonomicDrive = new HolonomicDrive(-PI/4);
 	brHolonomicDrive = new HolonomicDrive(-3*PI/4);
-	
-	HolonomicDrive::scale(input.getJoystickDirection);
-
-	flHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
-	frHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
-	blHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
-	brHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
 	
 	//Instantiate new Victor objects (PWM Module, PWM Channel)
 	//Channels defined in FIRSTRobot.hpp
@@ -82,24 +74,47 @@ void FIRSTRobot::RobotInit() {
 	brVictor = new Victor(1, BACK_RIGHT_MOTOR);
 }
 	
-void Robot2013::AutonomousInit() {
-
+void FIRSTRobot::AutonomousInit() {
 }
 	
-void Robot2013::AutonomousPeriodic() {
-
+void FIRSTRobot::AutonomousPeriodic() {
 }
 
-void Robot2013::TeleopInit() {
+void FIRSTRobot::TeleopInit() {
 }
 
-void Robot2013::TeleopPeriodic() {
+void FIRSTRobot::TeleopPeriodic() {
 	
+	input->update();
+	
+	HolonomicDrive::scale(input.getJoystickDirection);
+	
+	flHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
+	frHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
+	blHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
+	brHolonomicDrive->update(input.getJoystickDirection, input.getJoystickMagnitude, input.getJoystickZ);
+	
+	//update set point of PID if the change in speed is great enough
+	
+	if(fabs(flPIDController->GetSetpoint() - flHolonomicDrive.getMotor()*220) > 22) {
+		flPIDController->SetSetpoint(motor[1]*220.0f)
+	}
+	
+	if(fabs(frPIDController->GetSetpoint() - frHolonomicDrive.getMotor()*220) > 22){
+		frPIDController->SetSetpoint(motor[1]*220.0f)
+	}
+	
+	if(fabs(blPIDController->GetSetpoint() - blHolonomicDrive.getMotor()*220) > 22){
+		blPIDController->SetSetpoint(motor[1]*220.0f)
+	}
+	
+	if(fabs(brPIDController->GetSetpoint() - brHolonomicDrive.getMotor()*220) > 22){
+		brPIDController->SetSetpoint(motor[1]*220.0f)
+	}
+
 }
  
-void Robot2013::TestPeriodic() {
-	
+void FIRSTRobot::TestPeriodic() {
 }
 
 START_ROBOT_CLASS(FIRSTRobot);
-
