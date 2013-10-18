@@ -1,6 +1,8 @@
 //Martingrove FIRST Robotics Team 854
 #include "Input.hpp"
 
+#define PI 3.14159
+
 Input::Input() { //Constructor
 	joystick = new Joystick(1);
 	
@@ -14,8 +16,7 @@ Input::~Input() { //Destructor
 	
 }
 
-void Input::update() //All these functions get the value of joystick values
-{
+void Input::update() { //All these functions get the value of joystick values
 	//shooting = joystick->GetRawButton(1); //trigger button
 	
 	joystickX = -1 * (joystick->GetX());

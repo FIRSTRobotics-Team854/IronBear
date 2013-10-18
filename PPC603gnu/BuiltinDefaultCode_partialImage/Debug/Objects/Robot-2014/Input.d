@@ -388,7 +388,8 @@ BuiltinDefaultCode_partialImage/Debug/Objects/Robot-2014/Input.o:  \
   C:/WindRiver/vxworks-6.3/target/h/WPILib/Vision/Threshold.h \
   C:/WindRiver/vxworks-6.3/target/h/WPILib/Vision/HSLImage.h \
   C:/WindRiver/vxworks-6.3/target/h/WPILib/Vision/ColorImage.h \
-  C:/WindRiver/vxworks-6.3/target/h/WPILib/WPIErrors.h
+  C:/WindRiver/vxworks-6.3/target/h/WPILib/WPIErrors.h \
+  C:/WindRiver/vxworks-6.3/target/h/math.h
 
 C:/WindRiver/workspace/Robot-2014/Input.hpp:
 
@@ -1167,3 +1168,5 @@ C:/WindRiver/vxworks-6.3/target/h/WPILib/Vision/HSLImage.h:
 C:/WindRiver/vxworks-6.3/target/h/WPILib/Vision/ColorImage.h:
 
 C:/WindRiver/vxworks-6.3/target/h/WPILib/WPIErrors.h:
+
+C:/WindRiver/vxworks-6.3/target/h/math.h:

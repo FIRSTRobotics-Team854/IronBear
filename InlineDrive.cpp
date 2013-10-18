@@ -36,18 +36,18 @@ void InlineDrive::update(double joystickDirection, double joystickMagnitude ,dou
     }
 }
 
-double getflMotor () {
-	return flmotor;
+double InlineDrive::getflMotor() {
+	return flMotor;
 }
 
-double getfrMotor () {
-	return frmotor;
+double InlineDrive::getfrMotor() {
+	return frMotor;
 }
 
-double getblMotor () {
-	return blmotor;
+double InlineDrive::getblMotor() {
+	return blMotor;
 }
 
-double getbrMotor () {
-	return brmotor;
+double InlineDrive::getbrMotor() {
+	return brMotor;
 }

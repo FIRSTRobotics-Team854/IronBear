@@ -58,18 +58,18 @@ void HolonomicDrive::update(double joystickDirection, double joystickMagnitude ,
     }
 }
 
-double getflMotor () {
-	return flmotor;
+double HolonomicDrive::getflMotor () {
+	return flMotor;
 }
 
-double getfrMotor () {
-	return frmotor;
+double HolonomicDrive::getfrMotor () {
+	return frMotor;
 }
 
-double getblMotor () {
-	return blmotor;
+double HolonomicDrive::getblMotor () {
+	return blMotor;
 }
 
-double getbrMotor () {
-	return brmotor;
+double HolonomicDrive::getbrMotor () {
+	return brMotor;
 }

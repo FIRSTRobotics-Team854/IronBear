@@ -1,4 +1,16 @@
 //Martingrove FIRST Robotics Team 854
+#include <iostream>
+#include <stdio.h>
+#include <math.h>
+#include "WPILib.h"
+#include "Victor.h"
+
+
+#include "Input.cpp"
+#include "HolonomicDrive.cpp"
+#include "InlineDrive.cpp"
+
+#define PI 3.14159
 
 class FIRSTRobot : public IterativeRobot {
 private: //delcare private variables and methods found in this class
