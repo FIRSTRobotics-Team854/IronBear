@@ -7,9 +7,6 @@
    |            |
  motor[0]----motor[3]*/
 
-#define PI 3.14159
-
-
 class HolonomicDrive {
 private: //delcare private variables and methods found in this class
 
