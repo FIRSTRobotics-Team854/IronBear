@@ -14,6 +14,8 @@
 		11C994C6180F22BB001E3952 /* FIRSTRobot.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FIRSTRobot.cpp; sourceTree = "<group>"; };
 		11C994C7180F22BB001E3952 /* Inputs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Inputs.cpp; sourceTree = "<group>"; };
 		11EF6DC5180F84E100D4A110 /* File.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
+		11EF6DC91810CB1500D4A110 /* InlineDrive.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InlineDrive.cpp; sourceTree = "<group>"; };
+		11EF6DCA1810CB1500D4A110 /* InlineDrive.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InlineDrive.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -26,6 +28,8 @@
 				11C994C7180F22BB001E3952 /* Inputs.cpp */,
 				11C994C2180F22BB001E3952 /* HolonomicDrive.hpp */,
 				11C994C5180F22BB001E3952 /* HolonomicDrive.cpp */,
+				11EF6DCA1810CB1500D4A110 /* InlineDrive.hpp */,
+				11EF6DC91810CB1500D4A110 /* InlineDrive.cpp */,
 				11EF6DC5180F84E100D4A110 /* File.cpp */,
 			);
 			sourceTree = "<group>";

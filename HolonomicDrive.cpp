@@ -9,10 +9,10 @@ motor[0]----motor[3]*/
 
 #include "HolonomicDrive.hpp"
 
-HolonomicDrive::DriveProcessing() { //Constructor
+HolonomicDrive::HolonomicDrive() { //Constructor
 }
 
-HolonomicDrive::~DriveProcessing() { //Destructor	
+HolonomicDrive::~HolonomicDrive() { //Destructor	
 }
 
 void HolonomicDrive::update(double joystickDirection, double joystickMagnitude ,double joystickZ) {
@@ -56,7 +56,6 @@ void HolonomicDrive::update(double joystickDirection, double joystickMagnitude ,
 			brMotor += 0.2;
 		}
     }
-	//cerr<<"M: "<<motor<<endl;
 }
 
 double getflMotor () {
