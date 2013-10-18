@@ -18,7 +18,7 @@ void FIRSTRobot::RobotInit() {
 	flEncoder = new Encoder(FRONT_LEFT_ENCODER_A, FRONT_LEFT_ENCODER_B, CounterBase::k1X); //TL motor II
 	frEncoder = new Encoder(FRONT_RIGHT_ENCODER_A, FRONT_RIGHT_ENCODER_B, CounterBase::k1X); //TR motor III
 	blEncoder = new Encoder(BACK_LEFT_ENCODER_A, BACK_LEFT_ENCODER_B, CounterBase::k1X); //BL motor I
-	brEncoder = new Encoder(BACK_RIGHT_TENCODER_A, BACK_RIGHT_TENCODER_B, CounterBase::k1X); //BR motor IIII
+	brEncoder = new Encoder(BACK_RIGHT_ENCODER_A, BACK_RIGHT_ENCODER_B, CounterBase::k1X); //BR motor IIII
 	//magic?
 	flEncoder->SetPIDSourceParameter(Encoder::kRate);
 	frEncoder->SetPIDSourceParameter(Encoder::kRate);
@@ -96,22 +96,22 @@ void FIRSTRobot::TeleopPeriodic() {
 	//update input data
 	input->update();
 	//performe drive processing using fresh input data
-	drive->update(input->getJoystickDirection, input->getJoystickMagnitude, input->getJoystickZ);
+	drive->update(input->getJoystickDirection(), input->getJoystickMagnitude(), input->getJoystickZ());
 	//update set point of PID if the change in speed is great enough
-	if(fabs(flPIDController->GetSetpoint() - flHolonomicDrive.getMotor()*220) > 22) {
-		flPIDController->SetSetpoint(drive->getflMotor*220.0f)
+	if(fabs(flPIDController->GetSetpoint() - drive->getflMotor()*220) > 22) {
+		flPIDController->SetSetpoint(drive->getflMotor()*220.0f);
 	}
 	
-	if(fabs(frPIDController->GetSetpoint() - frHolonomicDrive.getMotor()*220) > 22){
-		frPIDController->SetSetpoint(drive->getfrMotor*220.0f)
+	if(fabs(frPIDController->GetSetpoint() - drive->getfrMotor()*220) > 22){
+		frPIDController->SetSetpoint(drive->getfrMotor()*220.0f);
 	}
 	
-	if(fabs(blPIDController->GetSetpoint() - blHolonomicDrive.getMotor()*220) > 22){
-		blPIDController->SetSetpoint(drive->getblMotor*220.0f)
+	if(fabs(blPIDController->GetSetpoint() - drive->getblMotor()*220) > 22){
+		blPIDController->SetSetpoint(drive->getblMotor()*220.0f);
 	}
 	
-	if(fabs(brPIDController->GetSetpoint() - brHolonomicDrive.getMotor()*220) > 22){
-		brPIDController->SetSetpoint(drive->getbrMotor*220.0f)
+	if(fabs(brPIDController->GetSetpoint() - drive->getbrMotor()*220) > 22){
+		brPIDController->SetSetpoint(drive->getbrMotor()*220.0f);
 	}
 	
 	//Debuging magic and stuff.

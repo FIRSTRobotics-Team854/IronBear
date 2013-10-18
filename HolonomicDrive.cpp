@@ -23,10 +23,10 @@ void HolonomicDrive::update(double joystickDirection, double joystickMagnitude ,
 	blMotor = cos(joystickDirection-blAngle);
 	brMotor = cos(joystickDirection-brAngle);
 	
-	double maxMotor = abs(flMotor);
-	if (abs(frMotor) > maxMotor) maxMotor = abs(frMotor);
-	if (abs(blMotor) > maxMotor) maxMotor = abs(blMotor);
-	if (abs(blMotor) > maxMotor) maxMotor = abs(blMotor);
+	double maxMotor = fabs(flMotor);
+	if (fabs(frMotor) > maxMotor) maxMotor = fabs(frMotor);
+	if (fabs(blMotor) > maxMotor) maxMotor = fabs(blMotor);
+	if (fabs(blMotor) > maxMotor) maxMotor = fabs(blMotor);
 	
 	scaleFactor = 1/maxMotor;
 	

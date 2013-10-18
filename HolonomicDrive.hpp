@@ -16,10 +16,10 @@ private: //delcare private variables and methods found in this class
 	
 	double scaleFactor;
 	//motor angles (rad)
-	const double flAngle = PI/4;
-	const double frAngle = -PI/4;
-	const double blAngle = -3*PI/4;
-	const double brAngle = 3*PI/4;
+	static const double flAngle = PI/4;
+	static const double frAngle = -PI/4;
+	static const double blAngle = -3*PI/4;
+	static const double brAngle = 3*PI/4;
 	//motor intensity (domain: 0 - 1)
 	double flMotor;
 	double frMotor;

@@ -9,8 +9,6 @@ Input::Input() { //Constructor
 	joystickZ = 0;
 	joystickMagnitude = 0;
 	joystickDirection = 0;
-	DEADZONE = 0.05;
-	Input::update();
 }
 Input::~Input() { //Destructor
 	
@@ -34,7 +32,7 @@ void Input::update() //All these functions get the value of joystick values
 		}
 		//manual angle definition for undefined areas of tan.
 		else if (joystickY > 0){
-			joystickDirection = PI/2
+			joystickDirection = PI/2;
 		}
 		else if (joystickY < 0){
 			joystickDirection = 3*PI/2;

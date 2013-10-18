@@ -3,10 +3,10 @@
 class FIRSTRobot : public IterativeRobot {
 private: //delcare private variables and methods found in this class
 	//Output Ports:
-	const int FRONT_LEFT_MOTOR = 1;
-	const int FRONT_RIGHT_MOTOR = 2;
-	const int BACK_LEFT_MOTOR = 3;
-	const int BACK_RIGHT_TMOTOR = 4;
+	static const int FRONT_LEFT_MOTOR = 1;
+	static const int FRONT_RIGHT_MOTOR = 2;
+	static const int BACK_LEFT_MOTOR = 3;
+	static const int BACK_RIGHT_MOTOR = 4;
 	
 	//Input Ports
 		//Encoder Wiring:
@@ -15,14 +15,14 @@ private: //delcare private variables and methods found in this class
 		//A Channel	Blue/Green
 		//Ground	Brown/Black
 		//B Channel	Yellow
-	const int FRONT_LEFT_ENCODER_A = 1;
-	const int FRONT_LEFT_ENCODER_B = 2;
-	const int FRONT_RIGHT_ENCODER_A = 3;
-	const int FRONT_RIGHT_ENCODER_B = 4;
-	const int BACK_LEFT_ENCODER_A = 5;
-	const int BACK_LEFT_ENCODER_B = 6;
-	const int BACK_RIGHT_ENCODER_A = 7;
-	const int BACK_RIGHT_ENCODER_B = 8;
+	static const int FRONT_LEFT_ENCODER_A = 1;
+	static const int FRONT_LEFT_ENCODER_B = 2;
+	static const int FRONT_RIGHT_ENCODER_A = 3;
+	static const int FRONT_RIGHT_ENCODER_B = 4;
+	static const int BACK_LEFT_ENCODER_A = 5;
+	static const int BACK_LEFT_ENCODER_B = 6;
+	static const int BACK_RIGHT_ENCODER_A = 7;
+	static const int BACK_RIGHT_ENCODER_B = 8;
 
 	//Declare Victor objects
 	Victor *flVictor, *frVictor, *blVictor, *brVictor;
@@ -31,7 +31,7 @@ private: //delcare private variables and methods found in this class
 	//Declare PIDController objects
 	PIDController *flPIDController, *frPIDController, *blPIDController, *brPIDController;
 	//Declare HolonomicDrive object
-	HolonomicDrive **holonomicDrive;
+	HolonomicDrive *drive;
 	//Declare Input object
 	Input *input;
 	
