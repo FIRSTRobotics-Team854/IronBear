@@ -1,5 +1,14 @@
 //Martingrove FIRST Robotics Team 854
+#include <iostream>
+#include <stdio.h>
+#include <math.h>
+#include "WPILib.h"
+#include "Victor.h"
+
+
 #include "FIRSTRobot.hpp"
+#include "Input.cpp"
+#include "HolonomicDrive.cpp"
 
 void FIRSTRobot::RobotInit() {
 	

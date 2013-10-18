@@ -9,10 +9,10 @@
 /* Begin PBXFileReference section */
 		11C994C2180F22BB001E3952 /* HolonomicDrive.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HolonomicDrive.hpp; sourceTree = "<group>"; };
 		11C994C3180F22BB001E3952 /* FIRSTRobot.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FIRSTRobot.hpp; sourceTree = "<group>"; };
-		11C994C4180F22BB001E3952 /* Inputs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Inputs.hpp; sourceTree = "<group>"; };
+		11C994C4180F22BB001E3952 /* Input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
 		11C994C5180F22BB001E3952 /* HolonomicDrive.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HolonomicDrive.cpp; sourceTree = "<group>"; };
 		11C994C6180F22BB001E3952 /* FIRSTRobot.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FIRSTRobot.cpp; sourceTree = "<group>"; };
-		11C994C7180F22BB001E3952 /* Inputs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Inputs.cpp; sourceTree = "<group>"; };
+		11C994C7180F22BB001E3952 /* Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
 		11EF6DC91810CB1500D4A110 /* InlineDrive.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InlineDrive.cpp; sourceTree = "<group>"; };
 		11EF6DCA1810CB1500D4A110 /* InlineDrive.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InlineDrive.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -23,8 +23,8 @@
 			children = (
 				11C994C3180F22BB001E3952 /* FIRSTRobot.hpp */,
 				11C994C6180F22BB001E3952 /* FIRSTRobot.cpp */,
-				11C994C4180F22BB001E3952 /* Inputs.hpp */,
-				11C994C7180F22BB001E3952 /* Inputs.cpp */,
+				11C994C4180F22BB001E3952 /* Input.hpp */,
+				11C994C7180F22BB001E3952 /* Input.cpp */,
 				11C994C2180F22BB001E3952 /* HolonomicDrive.hpp */,
 				11C994C5180F22BB001E3952 /* HolonomicDrive.cpp */,
 				11EF6DCA1810CB1500D4A110 /* InlineDrive.hpp */,
