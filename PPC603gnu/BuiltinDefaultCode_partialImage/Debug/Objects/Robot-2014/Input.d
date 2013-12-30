@@ -1,7 +1,7 @@
 BuiltinDefaultCode_partialImage/Debug/Objects/Robot-2014/Input.o:  \
  C:/WindRiver/workspace/Robot-2014/Input.cpp \
   C:/WindRiver/workspace/Robot-2014/Input.hpp \
-  C:/WindRiver/vxworks-6.3/target/h/WPILib/WPILib.h \
+  C:/WindRiver/vxworks-6.3/target/h/WPILib/wpilib.h \
   C:/WindRiver/vxworks-6.3/target/h/string.h \
   C:/WindRiver/vxworks-6.3/target/h/types/vxANSI.h \
   C:/WindRiver/vxworks-6.3/target/h/types/vxCpu.h \
@@ -389,11 +389,12 @@ BuiltinDefaultCode_partialImage/Debug/Objects/Robot-2014/Input.o:  \
   C:/WindRiver/vxworks-6.3/target/h/WPILib/Vision/HSLImage.h \
   C:/WindRiver/vxworks-6.3/target/h/WPILib/Vision/ColorImage.h \
   C:/WindRiver/vxworks-6.3/target/h/WPILib/WPIErrors.h \
+  c:/windriver/gnu/3.4.4-vxworks-6.3/x86-win32/lib/gcc/../../../x86-win32/include/c++/3.4.4/cmath \
   C:/WindRiver/vxworks-6.3/target/h/math.h
 
 C:/WindRiver/workspace/Robot-2014/Input.hpp:
 
-C:/WindRiver/vxworks-6.3/target/h/WPILib/WPILib.h:
+C:/WindRiver/vxworks-6.3/target/h/WPILib/wpilib.h:
 
 C:/WindRiver/vxworks-6.3/target/h/string.h:
 
@@ -1168,5 +1169,7 @@ C:/WindRiver/vxworks-6.3/target/h/WPILib/Vision/HSLImage.h:
 C:/WindRiver/vxworks-6.3/target/h/WPILib/Vision/ColorImage.h:
 
 C:/WindRiver/vxworks-6.3/target/h/WPILib/WPIErrors.h:
+
+c:/windriver/gnu/3.4.4-vxworks-6.3/x86-win32/lib/gcc/../../../x86-win32/include/c++/3.4.4/cmath:
 
 C:/WindRiver/vxworks-6.3/target/h/math.h:

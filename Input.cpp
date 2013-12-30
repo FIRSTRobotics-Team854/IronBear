@@ -2,6 +2,7 @@
 
 
 #include "Input.hpp"
+#include <cmath>
 
 #define PI 3.14159
 

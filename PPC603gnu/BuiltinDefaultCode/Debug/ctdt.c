@@ -7,6 +7,10 @@
 /*       -fdollars-in-identifiers flag.                   */
 
 
+void _GLOBAL__I__ZN10FIRSTRobot9RobotInitEv();
+
+void _GLOBAL__I__ZN5InputC2Ev();
+
 void _GLOBAL__I__ZN12PrintCommandC2EPKc();
 
 void _GLOBAL__I__ZN9Scheduler9_instanceE();
@@ -60,6 +64,8 @@ void _GLOBAL__I__ZN11StringArray19STRING_ARRAY_RAW_IDE();
 extern void (*_ctors[])();
 void (*_ctors[])() =
     {
+    _GLOBAL__I__ZN10FIRSTRobot9RobotInitEv,
+    _GLOBAL__I__ZN5InputC2Ev,
     _GLOBAL__I__ZN12PrintCommandC2EPKc,
     _GLOBAL__I__ZN9Scheduler9_instanceE,
     _GLOBAL__I__ZN11WaitCommandC2Ed,
@@ -87,6 +93,10 @@ void (*_ctors[])() =
     _GLOBAL__I__ZN11StringArray19STRING_ARRAY_RAW_IDE,
     0
     };
+
+void _GLOBAL__D__ZN10FIRSTRobot9RobotInitEv();
+
+void _GLOBAL__D__ZN5InputC2Ev();
 
 void _GLOBAL__D__ZN9Scheduler9_instanceE();
 
@@ -131,6 +141,8 @@ void _GLOBAL__D__ZN11StringArray19STRING_ARRAY_RAW_IDE();
 extern void (*_dtors[])();
 void (*_dtors[])() =
     {
+    _GLOBAL__D__ZN10FIRSTRobot9RobotInitEv,
+    _GLOBAL__D__ZN5InputC2Ev,
     _GLOBAL__D__ZN9Scheduler9_instanceE,
     _GLOBAL__D_wpi_error_s_ModuleIndexOutOfRange,
     _GLOBAL__D__ZN17MotorSafetyHelper12m_headHelperE,
