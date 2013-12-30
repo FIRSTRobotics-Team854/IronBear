@@ -1,11 +1,16 @@
 //Martingrove FIRST Robotics Team 854
 /*
  motor[1]----motor[2]
-   |    Front   |
+   |   ~Front~  |
    |    Motor   |
    |  Numbering |
    |            |
  motor[0]----motor[3]*/
+
+#ifndef __Robot_2014__HolonomicDrive__
+#define __Robot_2014__HolonomicDrive__
+
+#define PI 3.14159
 
 class HolonomicDrive {
 private: //delcare private variables and methods found in this class
@@ -33,3 +38,5 @@ public: //delcare public variables and methods found in this class
 	double getblMotor();
 	double getbrMotor();
 };
+
+#endif

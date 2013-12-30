@@ -1,3 +1,6 @@
+#ifndef __Robot_2014__InlineDrive__
+#define __Robot_2014__InlineDrive__
+
 class InlineDrive {
 private: //delcare private variables and methods found in this class
 	
@@ -17,3 +20,5 @@ public: //delcare public variables and methods found in this class
 	double getblMotor();
 	double getbrMotor();
 };
+
+#endif

@@ -9,6 +9,8 @@ motor[0]----motor[3]*/
 
 #include "HolonomicDrive.hpp"
 
+#include <cmath>
+
 HolonomicDrive::HolonomicDrive() { //Constructor
 }
 

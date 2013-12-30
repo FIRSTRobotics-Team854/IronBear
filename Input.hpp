@@ -1,4 +1,8 @@
 //Martingrove FIRST Robotics Team 854
+#ifndef __Robot_2014__INPUT__
+#define __Robot_2014__INPUT__
+
+#include <wpilib.h>
 
 class Input {
 	
@@ -30,3 +34,5 @@ public: //delcare public variables and methods found in this class
 	double getJoystickMagnitude();
 	double getJoystickDirection();
 };
+
+#endif
