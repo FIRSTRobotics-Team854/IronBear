@@ -177,3 +177,5 @@ xcuserdata
  #Ignore any output files
  PPC603gnu/
 *.xcuserstate
+
+*.xcuserstate
