@@ -34,7 +34,7 @@ void Input::update() { //All these functions get the value of joystick values
 		if (joystickX != 0){
 			joystickDirection = atan2(joystickY,joystickX); //stores angle in RAD
 		}
-		//manual angle definition for undefined areas of tan.
+		//manual angle definition for undefined regions of tan.
 		else if (joystickY > 0){
 			joystickDirection = PI/2;
 		}

@@ -14,7 +14,13 @@
 
 class HolonomicDrive {
 private: //delcare private variables and methods found in this class
-
+	
+	//Declare Victor objects
+	Victor *flVictor, *frVictor, *blVictor, *brVictor;
+	//Declare Encoder objects
+	Encoder *flEncoder, *frEncoder, *blEncoder, *brEncoder;
+	//Declare PIDController objects
+	PIDController *flPIDController, *frPIDController, *blPIDController, *brPIDController;
 	
 	double scaleFactor;
 	//motor angles (rad)

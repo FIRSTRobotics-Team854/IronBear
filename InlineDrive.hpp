@@ -4,21 +4,24 @@
 class InlineDrive {
 private: //delcare private variables and methods found in this class
 	
+	//Declare Victor objects
+	Victor *lVictors, *rVictors;
+	//Declare Encoder objects
+	Encoder *lEncoder, *rEncoder;
+	//Declare PIDController objects
+	PIDController *lPIDController, *rPIDController;
+	
 	//motor intensity (domain: 0 - 1)
-	double flMotor;
-	double frMotor;
-	double blMotor;
-	double brMotor;
+	double lMotors;
+	double rMotors;
 	
 public: //delcare public variables and methods found in this class
 	InlineDrive();
 	~InlineDrive();
 	
 	void update(double joystickDirection, double joystickMagnitude ,double joystickZ);
-	double getflMotor();
-	double getfrMotor();
-	double getblMotor();
-	double getbrMotor();
+	double getLMotors();
+	double getRMotors();
 };
 
 #endif
