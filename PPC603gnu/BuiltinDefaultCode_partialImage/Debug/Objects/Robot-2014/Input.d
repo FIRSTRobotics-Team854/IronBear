@@ -1,7 +1,7 @@
 BuiltinDefaultCode_partialImage/Debug/Objects/Robot-2014/Input.o:  \
  C:/WindRiver/workspace/Robot-2014/Input.cpp \
   C:/WindRiver/workspace/Robot-2014/Input.hpp \
-  C:/WindRiver/vxworks-6.3/target/h/WPILib/wpilib.h \
+  C:/WindRiver/vxworks-6.3/target/h/WPILib/WPIlib.h \
   C:/WindRiver/vxworks-6.3/target/h/string.h \
   C:/WindRiver/vxworks-6.3/target/h/types/vxANSI.h \
   C:/WindRiver/vxworks-6.3/target/h/types/vxCpu.h \
@@ -394,7 +394,7 @@ BuiltinDefaultCode_partialImage/Debug/Objects/Robot-2014/Input.o:  \
 
 C:/WindRiver/workspace/Robot-2014/Input.hpp:
 
-C:/WindRiver/vxworks-6.3/target/h/WPILib/wpilib.h:
+C:/WindRiver/vxworks-6.3/target/h/WPILib/WPIlib.h:
 
 C:/WindRiver/vxworks-6.3/target/h/string.h:
 

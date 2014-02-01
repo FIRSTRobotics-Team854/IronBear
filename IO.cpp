@@ -11,7 +11,7 @@
 //Ground	Brown/Black
 //B Channel	Yellow
 
-#ifdef HOLONOMIC //IO map for holonomic drive
+/*#ifdef HOLONOMIC //IO map for holonomic drive
 
 //Output Ports:
 static const int FRONT_LEFT_MOTOR = 1;
@@ -29,7 +29,7 @@ static const int BACK_LEFT_ENCODER_B = 6;
 static const int BACK_RIGHT_ENCODER_A = 7;
 static const int BACK_RIGHT_ENCODER_B = 8;
 
-#endif
+#endif*/
 
 #ifdef INLINE //IO map for inline drive
 

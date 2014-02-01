@@ -2,7 +2,7 @@
 #ifndef __Robot_2014__INPUT__
 #define __Robot_2014__INPUT__
 
-#include <wpilib.h>
+#include "WPIlib.h"
 
 class Input {
 	
@@ -39,4 +39,3 @@ public: //delcare public variables and methods found in this class
 };
 
 #endif
-

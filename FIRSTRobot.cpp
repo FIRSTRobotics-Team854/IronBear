@@ -13,10 +13,10 @@ void FIRSTRobot::RobotInit() {
 	drive = new HolonomicDrive();
 #endif
 
-#ifdef INLINE
+/*#ifdef INLINE
 	//Instantiate new a HolonomicDrive/InlineDrive object
 	drive = new InlineDrive();
-#endif
+#endif*/
 }
 	
 void FIRSTRobot::AutonomousInit() {

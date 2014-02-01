@@ -1,6 +1,5 @@
 //Martingrove FIRST Robotics Team 854
 
-
 #include "Input.hpp"
 #include <cmath>
 
@@ -16,7 +15,6 @@ Input::Input() { //Constructor
 	joystickDirection = 0;
 }
 Input::~Input() { //Destructor
-	
 }
 
 void Input::update() { //All these functions get the value of joystick values
@@ -41,7 +39,6 @@ void Input::update() { //All these functions get the value of joystick values
 		else if (joystickY < 0){
 			joystickDirection = 3*PI/2;
 		}
-		
 	}
 }
 

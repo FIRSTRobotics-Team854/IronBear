@@ -5,7 +5,6 @@
 #include <iostream>
 #include "WPILib.h"
 
-
 #include "Input.hpp"
 #include "HolonomicDrive.hpp"
 #include "InlineDrive.hpp"
@@ -16,7 +15,7 @@ class FIRSTRobot : public IterativeRobot {
 private: //delcare private variables and methods found in this class
 
 	//Declare HolonomicDrive object
-	HolonomicDrive *drive;
+	InlineDrive *drive;
 	//Declare Input object
 	Input *input;
 	
