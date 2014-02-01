@@ -1,7 +1,6 @@
 #include "InlineDrive.hpp"
 #include "IO.cpp"
-#include <wpilib.h>
-#include "Victor.h"
+#include <cmath>
 
 InlineDrive::InlineDrive() { //Constructor
 							 //Instantiate new Encoder objects (aChannel, bChannel, multiplier)
@@ -45,9 +44,12 @@ InlineDrive::InlineDrive() { //Constructor
 }
 
 InlineDrive::~InlineDrive() { //Destructor
-	delete lVictors, rVictors;
-	delete lEncoder, rEncoder;
-	delete lPIDController, rPIDController;
+	delete lVictors;
+	delete rVictors;
+	delete lEncoder;
+	delete rEncoder;
+	delete lPIDController;
+	delete rPIDController;
 }
 
 void InlineDrive::update(double joystickDirection, double joystickMagnitude, double joystickX, double joystickY, double joystickZ) {
@@ -62,22 +64,22 @@ void InlineDrive::update(double joystickDirection, double joystickMagnitude, dou
 		rMotors *= 0.8;
 		
 		if (joystickZ >= 0.25) { //deadzone
-			lMotor -= 0.2;
-			rMotor += 0.2;
+			lMotors -= 0.2;
+			rMotors += 0.2;
 		}
 		if (joystickZ <= -0.25) { //deadzone
-			lMotor += 0.2;
-			rMotor -= 0.2;
+			lMotors += 0.2;
+			rMotors -= 0.2;
 		}
     }
 	
 	//update set point of PID if the change in speed is great enough
-	if(fabs(lPIDController->GetSetpoint() - drive->getLMotors() * 220) > 22) {
-		lPIDController->SetSetpoint(drive->getLMotors() * 220.0f);
+	if(fabs(lPIDController->GetSetpoint() - lMotors * 220) > 22) {
+		lPIDController->SetSetpoint(lMotors * 220.0f);
 	}
 	
-	if(fabs(rPIDController->GetSetpoint() - drive->getRMotors() * 220) > 22){
-		rPIDController->SetSetpoint(drive->getRMotors() * 220.0f);
+	if(fabs(rPIDController->GetSetpoint() - lMotors * 220) > 22){
+		rPIDController->SetSetpoint(lMotors * 220.0f);
 	}
 	
 	//Debuging magic and stuff.

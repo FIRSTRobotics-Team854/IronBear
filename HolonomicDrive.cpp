@@ -5,12 +5,12 @@ motor[1]----motor[2]
    |    Motor   |
    |  Numbering |
    |            |
-motor[0]----motor[3]*/
+motor[0]----motor[3]
 
 #include "HolonomicDrive.hpp"
 
 #include "IO.cpp"
-#include <wpilib.h>
+
 #include "Victor.h"
 #include <cmath>
 
@@ -170,7 +170,7 @@ void HolonomicDrive::update(double joystickDirection, double joystickMagnitude, 
 	 cerr<<"flEncoder: "<<flEncoder->GetRate()<<endl;
 	 cerr<<"frEncoder: "<<frEncoder->GetRate()<<endl;
 	 cerr<<"blEncoder: "<<blEncoder->GetRate()<<endl;
-	 cerr<<"brEncoder: "<<brEncoder->GetRate()<<endl;*/
+	 cerr<<"brEncoder: "<<brEncoder->GetRate()<<endl;
 }
 
 
@@ -188,4 +188,4 @@ double HolonomicDrive::getblMotor() {
 
 double HolonomicDrive::getbrMotor() {
 	return brMotor;
-}
+}*/

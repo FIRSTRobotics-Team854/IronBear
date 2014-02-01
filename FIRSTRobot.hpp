@@ -5,7 +5,6 @@
 #include <iostream>
 #include "WPILib.h"
 
-
 #include "Input.hpp"
 #include "HolonomicDrive.hpp"
 #include "InlineDrive.hpp"

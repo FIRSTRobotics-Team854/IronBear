@@ -5,11 +5,12 @@
    |    Motor   |
    |  Numbering |
    |            |
- motor[0]----motor[3]*/
+ motor[0]----motor[3]
 
 #ifndef __Robot_2014__HolonomicDrive__
 #define __Robot_2014__HolonomicDrive__
 
+#include "WPIlib.h"
 #define PI 3.14159
 
 class HolonomicDrive : Drive {
@@ -38,11 +39,6 @@ public: //delcare public variables and methods found in this class
 	HolonomicDrive();
 	~HolonomicDrive();
 	
-	void update(double joystickDirection, double joystickMagnitude ,double joystickZ);
-	double getflMotor();
-	double getfrMotor();
-	double getblMotor();
-	double getbrMotor();
+	void update(double joystickDirection, double joystickMagnitude, double joystickX, double joystickY, double joystickZ);
 };
-
-#endif
+#endif */

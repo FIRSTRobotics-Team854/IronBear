@@ -19,7 +19,7 @@ public: //delcare public variables and methods found in this class
 	InlineDrive();
 	~InlineDrive();
 	
-	void update(double joystickDirection, double joystickMagnitude ,double joystickZ);
+	void update(double joystickDirection, double joystickMagnitude, double joystickX, double joystickY, double joystickZ);
 	double getLMotors();
 	double getRMotors();
 };

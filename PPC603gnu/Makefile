@@ -166,6 +166,10 @@ BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/HolonomicDrive.o 
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/IO.o : C:/WindRiver/workspace/Robot-2014/IO.cpp
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/InlineDrive.o : C:/WindRiver/workspace/Robot-2014/InlineDrive.cpp
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -176,6 +180,7 @@ BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/Input.o : C:/Wind
 
 OBJECTS_BuiltinDefaultCode_partialImage = BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/FIRSTRobot.o \
 	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/HolonomicDrive.o \
+	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/IO.o \
 	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/InlineDrive.o \
 	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/Input.o
 
@@ -189,8 +194,8 @@ _clean :: BuiltinDefaultCode_partialImage/$(MODE_DIR)/BuiltinDefaultCode_partial
 BuiltinDefaultCode_partialImage/$(MODE_DIR)/BuiltinDefaultCode_partialImage_clean : 
 	$(TRACE_FLAG)if [ -d "BuiltinDefaultCode_partialImage" ]; then cd "BuiltinDefaultCode_partialImage"; rm -rf $(MODE_DIR); fi
 
-DEP_FILES := BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/FIRSTRobot.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/HolonomicDrive.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/InlineDrive.d \
-	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/Input.d
+DEP_FILES := BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/FIRSTRobot.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/HolonomicDrive.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/IO.d \
+	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/InlineDrive.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/Input.d
 -include $(DEP_FILES)
 
 
