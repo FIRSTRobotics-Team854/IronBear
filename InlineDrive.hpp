@@ -1,7 +1,7 @@
 #ifndef __Robot_2014__InlineDrive__
 #define __Robot_2014__InlineDrive__
 
-class InlineDrive {
+class InlineDrive : Drive {
 private: //delcare private variables and methods found in this class
 	
 	//Declare Victor objects

@@ -12,7 +12,7 @@
 
 #define PI 3.14159
 
-class HolonomicDrive {
+class HolonomicDrive : Drive {
 private: //delcare private variables and methods found in this class
 	
 	//Declare Victor objects
