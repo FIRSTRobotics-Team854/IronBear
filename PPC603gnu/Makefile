@@ -31,7 +31,7 @@ else
 MODE_DIR := NonDebug
 endif
 OBJ_DIR := .
-PRJ_ROOT_DIR := C:/WindRiver/workspace/Robot-2014
+PRJ_ROOT_DIR := C:/WindRiver/workspace/IronBear
 WS_ROOT_DIR := C:/WindRiver/workspace
 
 
@@ -52,7 +52,7 @@ CC_ARCH_SPEC = -mcpu=603 -mstrict-align -mno-implicit-fp -mlongcall
 LIBPATH = 
 LIBS = 
 
-IDE_INCLUDES = -I$(WIND_BASE)/target/h/WPILib -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/wrn/coreip 
+IDE_INCLUDES = -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/WPILib -I$(WIND_BASE)/target/h/wrn/coreip 
 
 IDE_LIBRARIES = $(WIND_BASE)/target/lib/WPILib.a 
 
@@ -77,125 +77,120 @@ endif
 
 
 #Project Targets
-PROJECT_TARGETS = BuiltinDefaultCode/$(MODE_DIR)/BuiltinDefaultCode.out \
-	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/BuiltinDefaultCode_partialImage.o
+PROJECT_TARGETS = IterativeTemplate/$(MODE_DIR)/IterativeTemplate.out \
+	 IterativeTemplate_partialImage/$(MODE_DIR)/IterativeTemplate_partialImage.o
 
 
 #Rules
 
-# BuiltinDefaultCode
+# IterativeTemplate
 ifeq ($(DEBUG_MODE),1)
-BuiltinDefaultCode/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler = -g
-BuiltinDefaultCode/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler = -g
-BuiltinDefaultCode/$(MODE_DIR)/% : DEBUGFLAGS_Linker = -g
-BuiltinDefaultCode/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
-BuiltinDefaultCode/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
-BuiltinDefaultCode/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -g
+IterativeTemplate/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler = -g
+IterativeTemplate/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler = -g
+IterativeTemplate/$(MODE_DIR)/% : DEBUGFLAGS_Linker = -g
+IterativeTemplate/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
+IterativeTemplate/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
+IterativeTemplate/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -g
 else
-BuiltinDefaultCode/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler = -O2 -fstrength-reduce -fno-builtin
-BuiltinDefaultCode/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler = -O2 -fstrength-reduce -fno-builtin
-BuiltinDefaultCode/$(MODE_DIR)/% : DEBUGFLAGS_Linker = -O2 -fstrength-reduce -fno-builtin
-BuiltinDefaultCode/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
-BuiltinDefaultCode/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
-BuiltinDefaultCode/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -O2 -fstrength-reduce -fno-builtin
+IterativeTemplate/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler = -O2 -fstrength-reduce -fno-builtin
+IterativeTemplate/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler = -O2 -fstrength-reduce -fno-builtin
+IterativeTemplate/$(MODE_DIR)/% : DEBUGFLAGS_Linker = -O2 -fstrength-reduce -fno-builtin
+IterativeTemplate/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
+IterativeTemplate/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
+IterativeTemplate/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -O2 -fstrength-reduce -fno-builtin
 endif
-BuiltinDefaultCode/$(MODE_DIR)/% : IDE_INCLUDES = -I$(WIND_BASE)/target/h/WPILib -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/wrn/coreip 
-BuiltinDefaultCode/$(MODE_DIR)/% : IDE_LIBRARIES = $(WIND_BASE)/target/lib/WPILib.a 
-BuiltinDefaultCode/$(MODE_DIR)/% : PROJECT_TYPE = DKM
-BuiltinDefaultCode/$(MODE_DIR)/% : DEFINES = 
-BuiltinDefaultCode/$(MODE_DIR)/% : EXPAND_DBG = 0
-BuiltinDefaultCode/$(MODE_DIR)/% : VX_CPU_FAMILY = ppc
-BuiltinDefaultCode/$(MODE_DIR)/% : CPU = PPC603
-BuiltinDefaultCode/$(MODE_DIR)/% : TOOL_FAMILY = gnu
-BuiltinDefaultCode/$(MODE_DIR)/% : TOOL = gnu
-BuiltinDefaultCode/$(MODE_DIR)/% : TOOL_PATH = 
-BuiltinDefaultCode/$(MODE_DIR)/% : CC_ARCH_SPEC = -mcpu=603 -mstrict-align -mno-implicit-fp -mlongcall
-BuiltinDefaultCode/$(MODE_DIR)/% : LIBPATH = 
-BuiltinDefaultCode/$(MODE_DIR)/% : LIBS = 
-BuiltinDefaultCode/$(MODE_DIR)/% : OBJ_DIR := BuiltinDefaultCode/$(MODE_DIR)
+IterativeTemplate/$(MODE_DIR)/% : IDE_INCLUDES = -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/WPILib -I$(WIND_BASE)/target/h/wrn/coreip 
+IterativeTemplate/$(MODE_DIR)/% : IDE_LIBRARIES = $(WIND_BASE)/target/lib/WPILib.a 
+IterativeTemplate/$(MODE_DIR)/% : PROJECT_TYPE = DKM
+IterativeTemplate/$(MODE_DIR)/% : DEFINES = 
+IterativeTemplate/$(MODE_DIR)/% : EXPAND_DBG = 0
+IterativeTemplate/$(MODE_DIR)/% : VX_CPU_FAMILY = ppc
+IterativeTemplate/$(MODE_DIR)/% : CPU = PPC603
+IterativeTemplate/$(MODE_DIR)/% : TOOL_FAMILY = gnu
+IterativeTemplate/$(MODE_DIR)/% : TOOL = gnu
+IterativeTemplate/$(MODE_DIR)/% : TOOL_PATH = 
+IterativeTemplate/$(MODE_DIR)/% : CC_ARCH_SPEC = -mcpu=603 -mstrict-align -mno-implicit-fp -mlongcall
+IterativeTemplate/$(MODE_DIR)/% : LIBPATH = 
+IterativeTemplate/$(MODE_DIR)/% : LIBS = 
+IterativeTemplate/$(MODE_DIR)/% : OBJ_DIR := IterativeTemplate/$(MODE_DIR)
 
-OBJECTS_BuiltinDefaultCode = BuiltinDefaultCode_partialImage/$(MODE_DIR)/BuiltinDefaultCode_partialImage.o
+OBJECTS_IterativeTemplate = IterativeTemplate_partialImage/$(MODE_DIR)/IterativeTemplate_partialImage.o
 
-BuiltinDefaultCode/$(MODE_DIR)/BuiltinDefaultCode.out : $(OBJECTS_BuiltinDefaultCode)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@";rm -f "$@";nmppc $(OBJECTS_BuiltinDefaultCode) $(IDE_LIBRARIES) | tclsh $(WIND_BASE)/host/resource/hutils/tcl/munch.tcl -c ppc > $(OBJ_DIR)/ctdt.c; $(TOOL_PATH)ccppc $(DEBUGFLAGS_Linker) $(CC_ARCH_SPEC) -fdollars-in-identifiers -Wall $(ADDED_CFLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES)  -o $(OBJ_DIR)/ctdt.o -c $(OBJ_DIR)/ctdt.c; $(TOOL_PATH)ccppc -r -nostdlib -Wl,-X -T $(WIND_BASE)/target/h/tool/gnu/ldscripts/link.OUT -o "$@" $(OBJ_DIR)/ctdt.o $(OBJECTS_BuiltinDefaultCode) $(IDE_LIBRARIES) $(LIBPATH) $(LIBS)  $(ADDED_LIBPATH) $(ADDED_LIBS) && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
+IterativeTemplate/$(MODE_DIR)/IterativeTemplate.out : $(OBJECTS_IterativeTemplate)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@";rm -f "$@";nmppc $(OBJECTS_IterativeTemplate) $(IDE_LIBRARIES) | tclsh $(WIND_BASE)/host/resource/hutils/tcl/munch.tcl -c ppc > $(OBJ_DIR)/ctdt.c; $(TOOL_PATH)ccppc $(DEBUGFLAGS_Linker) $(CC_ARCH_SPEC) -fdollars-in-identifiers -Wall $(ADDED_CFLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES)  -o $(OBJ_DIR)/ctdt.o -c $(OBJ_DIR)/ctdt.c; $(TOOL_PATH)ccppc -r -nostdlib -Wl,-X -T $(WIND_BASE)/target/h/tool/gnu/ldscripts/link.OUT -o "$@" $(OBJ_DIR)/ctdt.o $(OBJECTS_IterativeTemplate) $(IDE_LIBRARIES) $(LIBPATH) $(LIBS)  $(ADDED_LIBPATH) $(ADDED_LIBS) && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
 
-BuiltinDefaultCode/$(MODE_DIR)/BuiltinDefaultCode_compile_file : $(FILE) ;
+IterativeTemplate/$(MODE_DIR)/IterativeTemplate_compile_file : $(FILE) ;
 
-_clean :: BuiltinDefaultCode/$(MODE_DIR)/BuiltinDefaultCode_clean
+_clean :: IterativeTemplate/$(MODE_DIR)/IterativeTemplate_clean
 
-BuiltinDefaultCode/$(MODE_DIR)/BuiltinDefaultCode_clean : 
-	$(TRACE_FLAG)if [ -d "BuiltinDefaultCode" ]; then cd "BuiltinDefaultCode"; rm -rf $(MODE_DIR); fi
+IterativeTemplate/$(MODE_DIR)/IterativeTemplate_clean : 
+	$(TRACE_FLAG)if [ -d "IterativeTemplate" ]; then cd "IterativeTemplate"; rm -rf $(MODE_DIR); fi
 
 
-# BuiltinDefaultCode_partialImage
+# IterativeTemplate_partialImage
 ifeq ($(DEBUG_MODE),1)
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler = -g
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler = -g
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Linker = -g
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -g
+IterativeTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler = -g
+IterativeTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler = -g
+IterativeTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Linker = -g
+IterativeTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
+IterativeTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
+IterativeTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -g
 else
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler = -O2 -fstrength-reduce -fno-builtin
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler = -O2 -fstrength-reduce -fno-builtin
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Linker = -O2 -fstrength-reduce -fno-builtin
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -O2 -fstrength-reduce -fno-builtin
+IterativeTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler = -O2 -fstrength-reduce -fno-builtin
+IterativeTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler = -O2 -fstrength-reduce -fno-builtin
+IterativeTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Linker = -O2 -fstrength-reduce -fno-builtin
+IterativeTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
+IterativeTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
+IterativeTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -O2 -fstrength-reduce -fno-builtin
 endif
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : IDE_INCLUDES = -I$(WIND_BASE)/target/h/WPILib -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/wrn/coreip 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : IDE_LIBRARIES = $(WIND_BASE)/target/lib/WPILib.a 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : PROJECT_TYPE = DKM
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : DEFINES = 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : EXPAND_DBG = 0
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : VX_CPU_FAMILY = ppc
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : CPU = PPC603
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : TOOL_FAMILY = gnu
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : TOOL = gnu
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : TOOL_PATH = 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : CC_ARCH_SPEC = -mcpu=603 -mstrict-align -mno-implicit-fp -mlongcall
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : LIBPATH = 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : LIBS = 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/% : OBJ_DIR := BuiltinDefaultCode_partialImage/$(MODE_DIR)
+IterativeTemplate_partialImage/$(MODE_DIR)/% : IDE_INCLUDES = -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/WPILib -I$(WIND_BASE)/target/h/wrn/coreip 
+IterativeTemplate_partialImage/$(MODE_DIR)/% : IDE_LIBRARIES = $(WIND_BASE)/target/lib/WPILib.a 
+IterativeTemplate_partialImage/$(MODE_DIR)/% : PROJECT_TYPE = DKM
+IterativeTemplate_partialImage/$(MODE_DIR)/% : DEFINES = 
+IterativeTemplate_partialImage/$(MODE_DIR)/% : EXPAND_DBG = 0
+IterativeTemplate_partialImage/$(MODE_DIR)/% : VX_CPU_FAMILY = ppc
+IterativeTemplate_partialImage/$(MODE_DIR)/% : CPU = PPC603
+IterativeTemplate_partialImage/$(MODE_DIR)/% : TOOL_FAMILY = gnu
+IterativeTemplate_partialImage/$(MODE_DIR)/% : TOOL = gnu
+IterativeTemplate_partialImage/$(MODE_DIR)/% : TOOL_PATH = 
+IterativeTemplate_partialImage/$(MODE_DIR)/% : CC_ARCH_SPEC = -mcpu=603 -mstrict-align -mno-implicit-fp -mlongcall
+IterativeTemplate_partialImage/$(MODE_DIR)/% : LIBPATH = 
+IterativeTemplate_partialImage/$(MODE_DIR)/% : LIBS = 
+IterativeTemplate_partialImage/$(MODE_DIR)/% : OBJ_DIR := IterativeTemplate_partialImage/$(MODE_DIR)
 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/FIRSTRobot.o : C:/WindRiver/workspace/Robot-2014/FIRSTRobot.cpp
+IterativeTemplate_partialImage/$(MODE_DIR)/Objects/IronBear/Catapult.o : C:/WindRiver/workspace/IronBear/Catapult.cpp
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/HolonomicDrive.o : C:/WindRiver/workspace/Robot-2014/HolonomicDrive.cpp
+IterativeTemplate_partialImage/$(MODE_DIR)/Objects/IronBear/FIRSTRobot.o : C:/WindRiver/workspace/IronBear/FIRSTRobot.cpp
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/IO.o : C:/WindRiver/workspace/Robot-2014/IO.cpp
+IterativeTemplate_partialImage/$(MODE_DIR)/Objects/IronBear/Fork.o : C:/WindRiver/workspace/IronBear/Fork.cpp
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/InlineDrive.o : C:/WindRiver/workspace/Robot-2014/InlineDrive.cpp
+IterativeTemplate_partialImage/$(MODE_DIR)/Objects/IronBear/Pneumatics.o : C:/WindRiver/workspace/IronBear/Pneumatics.cpp
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/Input.o : C:/WindRiver/workspace/Robot-2014/Input.cpp
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+OBJECTS_IterativeTemplate_partialImage = IterativeTemplate_partialImage/$(MODE_DIR)/Objects/IronBear/Catapult.o \
+	 IterativeTemplate_partialImage/$(MODE_DIR)/Objects/IronBear/FIRSTRobot.o \
+	 IterativeTemplate_partialImage/$(MODE_DIR)/Objects/IronBear/Fork.o \
+	 IterativeTemplate_partialImage/$(MODE_DIR)/Objects/IronBear/Pneumatics.o
 
+IterativeTemplate_partialImage/$(MODE_DIR)/IterativeTemplate_partialImage.o : $(OBJECTS_IterativeTemplate_partialImage)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc -r -nostdlib -Wl,-X  -o "$@" $(OBJECTS_IterativeTemplate_partialImage) $(LIBPATH) $(LIBS) $(ADDED_LIBPATH) $(ADDED_LIBS)  && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
 
-OBJECTS_BuiltinDefaultCode_partialImage = BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/FIRSTRobot.o \
-	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/HolonomicDrive.o \
-	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/IO.o \
-	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/InlineDrive.o \
-	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/Input.o
+IterativeTemplate_partialImage/$(MODE_DIR)/IterativeTemplate_partialImage_compile_file : $(FILE) ;
 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/BuiltinDefaultCode_partialImage.o : $(OBJECTS_BuiltinDefaultCode_partialImage)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc -r -nostdlib -Wl,-X  -o "$@" $(OBJECTS_BuiltinDefaultCode_partialImage) $(LIBPATH) $(LIBS) $(ADDED_LIBPATH) $(ADDED_LIBS)  && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
+_clean :: IterativeTemplate_partialImage/$(MODE_DIR)/IterativeTemplate_partialImage_clean
 
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/BuiltinDefaultCode_partialImage_compile_file : $(FILE) ;
+IterativeTemplate_partialImage/$(MODE_DIR)/IterativeTemplate_partialImage_clean : 
+	$(TRACE_FLAG)if [ -d "IterativeTemplate_partialImage" ]; then cd "IterativeTemplate_partialImage"; rm -rf $(MODE_DIR); fi
 
-_clean :: BuiltinDefaultCode_partialImage/$(MODE_DIR)/BuiltinDefaultCode_partialImage_clean
-
-BuiltinDefaultCode_partialImage/$(MODE_DIR)/BuiltinDefaultCode_partialImage_clean : 
-	$(TRACE_FLAG)if [ -d "BuiltinDefaultCode_partialImage" ]; then cd "BuiltinDefaultCode_partialImage"; rm -rf $(MODE_DIR); fi
-
-DEP_FILES := BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/FIRSTRobot.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/HolonomicDrive.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/IO.d \
-	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/InlineDrive.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/Robot-2014/Input.d
+DEP_FILES := IterativeTemplate_partialImage/$(MODE_DIR)/Objects/IronBear/Catapult.d IterativeTemplate_partialImage/$(MODE_DIR)/Objects/IronBear/FIRSTRobot.d IterativeTemplate_partialImage/$(MODE_DIR)/Objects/IronBear/Fork.d \
+	 IterativeTemplate_partialImage/$(MODE_DIR)/Objects/IronBear/Pneumatics.d
 -include $(DEP_FILES)
 
 
